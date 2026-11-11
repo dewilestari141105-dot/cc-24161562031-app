@@ -1,6 +1,6 @@
 <?php
 const PEMILIK = "24161562031 - Dewi Lestari";
-const VERSI = "1.0";
+const VERSI = "1.1";
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
