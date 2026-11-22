@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liveness-gagal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: liveness-gagal
+  template:
+    metadata:
+      labels:
+        app: liveness-gagal
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /sehat
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5

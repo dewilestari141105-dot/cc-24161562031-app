@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: errimagepull
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: errimagepull
+  template:
+    metadata:
+      labels:
+        app: errimagepull
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:tidak-ada
+          ports:
+            - containerPort: 80
